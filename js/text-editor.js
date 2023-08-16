@@ -1,35 +1,47 @@
+
+function textAction(actionId,className){
+    const classes = document.getElementById('text').classList;
+    if(!classes.contains(className)){
+        document.getElementById('text').classList.add(className);
+        document.getElementById(actionId).classList.add('bg-lime-100');
+    }
+    else{
+        document.getElementById('text').classList.remove(className);
+        document.getElementById(actionId).classList.remove('bg-lime-100');
+    }
+}
+
+
+
 document.getElementById('make-bold').addEventListener('click', function(){
-    const classes = document.getElementById('text').classList;
-    if(!classes.contains('font-bold')){
-        document.getElementById('text').classList.add('font-bold');
-        document.getElementById('make-bold').classList.add('bg-lime-100');
-    }
-    else{
-        document.getElementById('text').classList.remove('font-bold');
-        document.getElementById('make-bold').classList.remove('bg-lime-100');
-    }
+    textAction('make-bold','font-bold');
+})
+document.getElementById('make-italic').addEventListener('click', function(){
+    textAction('make-italic','italic');
+})
+document.getElementById('make-underline').addEventListener('click', function(){
+    textAction('make-underline','underline');
 })
 
-document.getElementById('make-italic').addEventListener('click',function(){
-    const classes = document.getElementById('text').classList;
-    if(!classes.contains('italic')){
-        document.getElementById('text').classList.add('italic');
-        document.getElementById('make-italic').classList.add('bg-lime-100');
-    }
-    else{
-        document.getElementById('text').classList.remove('italic');
-        document.getElementById('make-italic').classList.remove('bg-lime-100');
-    }
+document.getElementById('make-left').addEventListener('click',function(){
+    textAction('make-left','text-left');
+})
+document.getElementById('make-center').addEventListener('click',function(){
+    textAction('make-center','text-center');
+})
+document.getElementById('make-right').addEventListener('click',function(){
+    textAction('make-right','text-right');
+})
+document.getElementById('make-justify').addEventListener('click',function(){
+    textAction('make-justify','text-justify');
 })
 
-document.getElementById('make-underline').addEventListener('click',function(){
-    const classes = document.getElementById('text').classList;
-    if(!classes.contains('underline')){
-        document.getElementById('text').classList.add('underline');
-        document.getElementById('make-underline').classList.add('bg-lime-100');
-    }
-    else{
-        document.getElementById('text').classList.remove('underline');
-        document.getElementById('make-underline').classList.remove('bg-lime-100');
-    }
+document.getElementById('font-size').addEventListener('click',function(){
+    const fontValue = document.getElementById('font-size').value;
+    document.getElementById('text').style.fontSize = fontValue+'px';
+})
+
+document.getElementById('font-color').addEventListener('click',function(){
+    const fontColor = document.getElementById('font-color').value;
+    document.getElementById('text').style.color = fontColor;
 })

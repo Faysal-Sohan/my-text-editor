@@ -4,8 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Editor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/12d6715e70.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <h1>My Text Editor</h1>
+<body class="container mx-auto bg-cyan-200">
+    <header>
+        <h1 class="text-4xl text-center mt-12 font-medium">My Text Editor</h1>
+    </header>
+    <main>
+        <section class="w-9/12 mx-auto border-2 border-black p-2 bg-blue-300 mt-4">
+            <div class="flex justify-between px-7 items-center py-2 border-b-2 border-black">
+                <div class="flex gap-2">
+                    <i id="make-bold" class="fas fa-bold cursor-pointer w-8 p-2 text-center rounded-md"></i>
+                    <i id="make-italic" class="fas fa-italic cursor-pointer w-8 p-2 text-center rounded-md "></i>
+                    <i id="make-underline" class="fas fa-underline cursor-pointer w-8 p-2 text-center rounded-md"></i>
+                </div>
+                <div class="flex gap-4">
+                    <i class="fas fa-align-left"></i>
+                    <i class="fas fa-align-center"></i>
+                    <i class="fas fa-align-right"></i>
+                    <i class="fas fa-align-justify"></i>
+                </div>
+                <div class="flex gap-4">
+                    <input type="number" value="20" name="" id="" class="w-10 border-black border-2 rounded-lg">
+                    <input type="color" id="favcolor" name="favcolor" value="#000000">
+                </div>
+            </div>
+            <textarea name="" id="text" cols="30" rows="20" class="mt-2 w-full text-xl p-2"></textarea>
+        </section>
+    </main>
+    <script src="js/text-editor.js"></script>
 </body>
 </html>
